@@ -1,2 +1,1 @@
-# seven-min-workout
-BSX Seven Minute Workout
+# BSX Seven Minute Workout
