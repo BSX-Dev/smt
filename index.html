@@ -22,7 +22,8 @@ $(document).ready(function() {
 function setupSounds(){
     sounds = ["1","2","3","tick","crunches","getreadyfor","go","highknees",
     "jumpingjacks","lunges","plank","pushuprotate","pushups","sideplank",
-    "squats","stepups","switchsides","triangle4","tricepdips","wallsit","goodjob"]; 
+    "squats","stepups","switchsides","triangle4","tricepdips","wallsit","goodjob",
+    "everyonecongrats"]; 
     
     for(var i = 0; i <sounds.length; i++){// exercises.length
         lowLag.load([sounds[i]+".mp3?v2"],sounds[i]);
@@ -31,7 +32,7 @@ function setupSounds(){
 
 function setupExercises(){
     exercises = [
-        {"caption":"jumping jacks","sound":"jumpingjacks","switchSides":false},
+        {"caption":"jumping jacks","sound":"everyonecongrats","switchSides":false},
         {"caption":"wall sit","sound":"wallsit","switchSides":false},
         {"caption":"push-up","sound":"pushups","switchSides":false},
         {"caption":"abdominal crunch","sound":"crunches","switchSides":false},
@@ -166,7 +167,7 @@ function playSoundAtTime(delay,sound){
     }
     h1{
         text-align: center;
-        font-size:40px;
+        font-size: 40px;
     }
     #timer {
         font-size:200px;
@@ -214,7 +215,9 @@ function playSoundAtTime(delay,sound){
             </div>
         </td>
         <td width="300" align="center">
-            <div id="timer"><button onClick="launch()">go</button></div>
+            <div id="timer">
+	      <button onClick="launch()">go</button>
+	    </div>
         </td>
     </tr>
     <tr><td colspan="2">
