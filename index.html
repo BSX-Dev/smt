@@ -32,18 +32,18 @@ function setupSounds(){
 
 function setupExercises(){
     exercises = [
-        {"caption":"jumping jacks","sound":"everyonecongrats","switchSides":false},
-        {"caption":"wall sit","sound":"wallsit","switchSides":false},
-        {"caption":"push-up","sound":"pushups","switchSides":false},
-        {"caption":"abdominal crunch","sound":"crunches","switchSides":false},
-        {"caption":"step-up onto chair","sound":"stepups","switchSides":true},
-        {"caption":"squat","sound":"squats","switchSides":false},
-        {"caption":"tricep dip on chair","sound":"tricepdips","switchSides":false},
-        {"caption":"plank","sound":"plank","switchSides":false},
-        {"caption":"high knees running in place","sound":"highknees","switchSides":false},
-        {"caption":"lunge","sound":"lunges","switchSides":true},
-        {"caption":"push-up and rotation","sound":"pushuprotate","switchSides":true},
-        {"caption":"side plank","sound":"sideplank","switchSides":true},
+        {"caption":"jumping jacks","sound":"everyonecongrats","switchSides":false,"color": "rgb(242, 150, 12)"},
+        {"caption":"wall sit","sound":"wallsit","switchSides":false,"color": "rgb(234, 7, 7)"},
+        {"caption":"push-up","sound":"pushups","switchSides":false, "color": "rgb(176, 60, 209)"},
+        {"caption":"abdominal crunch","sound":"crunches","switchSides":false, "color": "rgb(71, 163, 255)"},
+        {"caption":"step-up onto chair","sound":"stepups","switchSides":true, "color": "rgb(255, 158, 217)"},
+        {"caption":"squat","sound":"squats","switchSides":false, "color": "rgb(158, 251, 255"},
+        {"caption":"tricep dip on chair","sound":"tricepdips","switchSides":false, "color": "rgb(255, 215, 56)"},
+        {"caption":"plank","sound":"plank","switchSides":false, "color": "rgb(224, 211, 255)"},
+        {"caption":"high knees running in place","sound":"highknees","switchSides":false, "color": "rgb(165, 226, 72)"},
+        {"caption":"lunge","sound":"lunges","switchSides":true, "color": "rgb(255, 0, 114)"},
+        {"caption":"push-up and rotation","sound":"pushuprotate","switchSides":true, "color": "rgb(199, 255, 0)"},
+        {"caption":"side plank","sound":"sideplank","switchSides":true, "color": "rgb(10, 56, 102)"},
         ];
 }
     
@@ -79,6 +79,9 @@ console.log("TRYING "+place);
     //set exercise pic at first
     showExercisePicAtTime(basetime,exer.sound);
 
+
+    // set background color
+    showBackgroundColorAtTime( 9000+basetime,exer.color) 
     //
     playSoundAtTime(basetime,"getreadyfor");
     
@@ -100,6 +103,8 @@ console.log("TRYING "+place);
         showCountAtTime(basetime + 1000 * i,9 - i );
     }
     showCaption(basetime ,"resting ("+exer.caption +" next)");
+
+    showBackgroundColorAtTime(basetime,"rgb(219, 219, 219")
 
     var exerstart = basetime + 9 * 1000;
     
@@ -142,8 +147,14 @@ function showExercisePicAtTime(delay,expic){
     setTimeout(function(){
         $("#expic").html('<img width="276" height="258" src="/img/exercise_pic/'+expic+'.png?1">');
     },delay);
-
 }
+
+function showBackgroundColorAtTime(delay,color){
+    setTimeout(function(){
+        document.body.style.backgroundColor = color;
+    },delay);
+}
+
 function showCaption(delay,caption){
     setTimeout(function(){
         $("#caption").html(caption);
@@ -163,20 +174,25 @@ function playSoundAtTime(delay,sound){
 
 <style>
     body {
+        background-color: rgb(43, 198, 255);
         font-family: helvetica,arial,sans-serif;
     }
+
     h1{
+        color: white;
         text-align: center;
         font-size: 40px;
     }
     #timer {
         font-size:200px;
+        color: white;
     }
     button {
         font-size:100px;
-        background-color: #3B00CA;
+        background-color:white ;
         border:none;
-        color:white;
+        color:rgb(43, 198, 255);
+        
         
     }
     #progzone {
